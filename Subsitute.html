@@ -219,7 +219,7 @@
             </em>
             <em>
                 [Occurance Number]
-            </em>...)' the answer will be all the 'search for's replaced with the number given in the 'replaced with' in the text 'text to search' 'occurance number' times.
+            </em>...)' the answer will be the text to search for replaced with the text in the 'replaced with' area and if there is no number in the 'occoruance numeber' it will replace all and if there is an occourance number it will replace only <em>occourance number</em>th one.
         </p>
         
         <hr>
@@ -233,15 +233,7 @@
             <br><br>
             
             <p class="GSexample">
-                SUBSITUTE(
-                <span class="highlighted">(Text)</span>
-                "I,Like,Google,Sheets", 
-                <span class="highlighted">(Search For)</span>
-                ",", 
-                <span class="highlighted">(replaced with)</span>
-                " ", 
-                <span class="highlighted">([Occurance number])</span>
-                3) = I Like Google,Sheets.
+                SUBSITUTE("I,Like,Google,Sheets", ",", " ",  3) = I,Like,Google Sheets.
             </p>
             
             <a class="tryit" href="https://docs.google.com/spreadsheets/d/15AmLdMsTqxiYH1ZZQFsGkEtqqFREBE1YS5jAymOUZVs/edit?usp=sharing" target="_blank" onclick="style()" id="try">
