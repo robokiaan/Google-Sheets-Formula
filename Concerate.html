@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheets Fomulas | Concatenate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        
+        .head {
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+        
+        .tryit {
+            color: white;
+            background-color: cornflowerblue;
+            border-width: 0px;
+            padding: 10px;
+        }
+        
+        .tryit:hover {
+            color: white;
+            background-color: cornflowerblue;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .example {
+            background-color: lightgray;
+            padding: 20px;
+        }
+        
+        .GSexample {
+            background-color: white;
+            padding: 15px 0px 15px 20px;
+            border-left: 10px solid cornflowerblue;
+            margin: 0px 20px 20px 20px;
+        }
+        
+        em {
+            color: cornflowerblue;
+        }
+        
+        .sidebar {
+            height: 100%;
+            /* 100% Full-height */
+            width: 0;
+            /* 0 width - change this with JavaScript */
+            position: fixed;
+            /* Stay in place */
+            z-index: 999999999;
+            /* Stay on top */
+            top: 0;
+            left: 0;
+            background-color: #000000;
+            /* Black*/
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+            padding-top: 60px;
+            /* Place content 60px from the top */
+            transition: 0.5s;
+            /* 0.5 second transition effect to slide in the sidebar */
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            display: block;
+            transition: 0.3s;
+            color: white;
+        }
+
+        .sidebar a:hover {
+            background-color: cornflowerblue;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 30px;
+            margin-left: 50px;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: cornflowerblue;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            /* If you want a transition effect */
+            padding: 20px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+
+        div {
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+    </style>
+    <script>
+        
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "350px";
+            document.getElementById("main").style.marginLeft = "350px";
+            document.getElementById("head").style.paddingLeft = "350px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("head").style.paddingLeft = "0";
+        }
+        
+        function style() {
+            document.getElementById("try").style.color = "white";
+            document.getElementById("try").style.textDecoration = "none";
+        }
+
+    </script>
+</head>
+
+<body>
+    
+    <nav class="navbar-inverse" id="head" style="transition: padding 0.5s; background-color: cornflowerblue; z-index: 1;">
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            
+            <div class="nav navbar-nav">
+            
+                <p class="navbar-brand" style="color: white;">Google Sheets Formulas</p>
+            
+            </div>
+            
+        </div>
+
+    </nav>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" style="border-width: 0px; background-color: black;" class="extint closebtn" onclick="closeNav()">×</a>
+        <a href="index.html">MEDIAN()</a>
+        <a href="">MID()</a>
+        <a href="">FIND()</a>
+        <a href="">LEN()</a>
+        <a href="">GOOGLETRANSLATE()</a>
+        <a href="">IF()</a>
+        <a href="">IFS()</a>
+        <a href="#" style="background-color: cornflowerblue;">CONCATENATE()</a>
+        <a href="Subsitute.html">SUBSITUTE()</a>
+    </div>
+
+    <div id="main" class="container-fluid">
+        
+        <button class="openbtn" onclick="openNav()">☰ Menu</button>
+        
+        <h1 class="text-capitalize head"><strong>CONCATENATE()</strong></h1>
+        
+        <hr>
+        
+        <p>
+            <strong>
+                What Is CONCATENATE
+            </strong>
+            <br>
+            <br>
+            Concatenate is the formula used to join many things into one
+            <br>
+            <br>
+        </p>
+        
+        <hr>
+
+        <p>
+            <strong>
+                How to use
+            </strong>
+            <br>
+            <br>
+            Click a cell write '=CONCATENATE(
+            <em>
+                value1
+            </em>,
+            <em>
+                value2
+            </em>, 
+            <em>
+                [value3]
+            </em>...)' the answer will return as all the parameters joined.
+        </p>
+        
+        <hr>
+        
+        <div class="example">
+            
+            <strong>
+                Example
+            </strong>
+            
+            <br><br>
+            
+            <p class="GSexample">
+                CONCATENATE("I ", "Like ", "Google ", "Sheets ") = I Like Google Sheets.
+            </p>
+            
+            <a class="tryit" href="" target="_blank" onclick="style()" id="try">
+                Try It Yourself <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i>
+            </a>
+        
+        </div>
+        
+    </div>
+    
+</body>
+
+</html>
